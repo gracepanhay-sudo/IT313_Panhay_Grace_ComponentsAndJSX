@@ -1,56 +1,114 @@
-# Welcome to your Expo app 👋
+# IT313 Panhay Grace - Components and JSX
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Video Demonstration: React Components & JSX in Action
 
-## Get started
+This project is a React Native application created using Expo for the IT313 Mobile Programming Laboratory Activity 4.
 
-1. Install dependencies
+The application demonstrates the use of React components, JSX, props, conditional rendering, array mapping, and dynamic data in a Student Roster.
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+* Displays student information using a reusable `StudentCard` component.
+* Uses props to pass student information such as:
 
-   ```bash
-   npx expo start
-   ```
+  * Name
+  * Course
+  * Units
+  * Full Load status
+* Uses destructuring inside the `StudentCard` component.
+* Uses conditional rendering with `isFullLoad && ...`.
+* Uses `.map()` to display multiple student cards.
+* Uses `student.id` as the unique key for each student.
+* Displays the total number of students using `{students.length}`.
+* Includes a **Reverse Roster** button to change the order of the student list.
 
-In the output, you'll find options to open the app in a
+## Project Structure
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+src/
+├── app/
+│   ├── _layout.tsx
+│   ├── index.tsx
+│   └── explore.tsx
+│
+├── components/
+│   ├── StudentCard.tsx
+│   └── StudentRoster.tsx
+│
+└── data/
+    └── student.ts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Technologies Used
 
-### Other setup steps
+* React Native
+* Expo
+* TypeScript
+* JSX
+* JavaScript/TypeScript Array Methods
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## How to Run
 
-## Learn more
+### 1. Install dependencies
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 2. Start the Expo development server
 
-## Join the community
+```bash
+npx expo start
+```
 
-Join our community of developers creating universal apps.
+### 3. Open the application
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The application can be opened using:
+
+* Expo Go
+* Android Emulator
+* iOS Simulator
+* Web Browser
+
+## Main Components
+
+### StudentCard
+
+The `StudentCard` component is a reusable functional component that receives student information through props.
+
+It demonstrates:
+
+```tsx
+name
+course
+units
+isFullLoad
+```
+
+It also uses conditional rendering to display **Full Load** when `isFullLoad` is true.
+
+### StudentRoster
+
+The `StudentRoster` component contains the student array and uses `.map()` to render each student.
+
+It also uses:
+
+```tsx
+key={student.id}
+```
+
+to provide a unique key for every student card.
+
+The **Reverse Roster** button changes the order of the displayed students.
+
+## Sample Student Data
+
+The application contains sample student records with different courses, units, and load statuses.
+
+## Author
+
+**Grace Panhay**
+
+**BS Information Technology**
+
+**IT313 - Mobile Programming**
